@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>WP</title>
+    <style type="text/css">
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "open sans",sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    min-width: 600px;
+}
+
+.adminMenuWrap{
+    position: relative;
+    float: left;
+    width: 160px;
+    background-color: #222;
+}
+
+.adminmenu{
+    clear: left;
+    margin: 12px 0;
+    list-style: none;
+    width: 160px;
+    background-color: #222;
+}
+
+.menu{
+    min-height: 34px;
+    cursor: pointer;
+}
+
+.menu a{
+    padding: 10px 0;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    text-indent: 40px;
+}
+
+a:hover{
+    background-color: #000;
+    color: cyan;
+}
+    </style>
+</head>
+<body>
+<div class="adminMenuWrap">
+    <ul class="adminmenu">
+        <li class="menu"><a href="#">文章</a></li>
+        <li class="menu"><a href="#">多媒体</a></li>
+        <li class="menu"><a href="#">页面</a></li>
+        <li class="menu"><a href="#">评论</a></li>
+        <li class="menu"><a href="#">外观</a></li>
+        <li class="menu"><a href="#">插件</a></li>
+        <li class="menu"><a href="#">用户</a></li>
+    </ul>
+</div>
+</body>
+</html>

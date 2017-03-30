@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+*{margin :0;padding: 0;}
+div{
+    margin:0 auto;font-size: 12px;width: 500px
+}
+ul{list-style: none;}
+ul li{
+    border:1px solid #ccc;
+    width:500px;height: 80px;
+    margin:12px 0;
+    text-indent: 2em;padding: 5px;
+}
+    </style>
+    <script>
+window.onload=function(){
+    var oUl=document.getElementById('ul1');
+    var aLi=oUl.getElementsByTagName('li');
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].onclick=function(){
+            alert(this.innerHTML);
+        }
+    }
+}
+    </script>
+}
+</head>
+<body>
+    <div >
+        <ul id="ul1">
+            <li><strong>新华社</strong>11月10日刊发时评《防霾治霾须痛下决心》，提出面对红红的雾霾爆表图，我们已经没有时间犹豫，须痛下决心，拿出实招，各方出力，久久为功。</li>
+            <li>重度雾霾天气持续多日，仍滞留在东北。环保和气象部门预测，到11月14日前很难消散。面对红红的雾霾爆表图，我们已经没有时间犹豫，须痛下决心，拿出实招，<strong>各方出力</strong>，<strong>久久为功</strong>。</li>
+            <li>找准病根才能对症下药。有关部门分析认为，<strong>此次严重雾霾成因有三方面</strong>：一是冬季的采暖及秸秆焚烧；二是近期冷空气势力弱，不利于雾霾消散，加上近期降水过程使地面相对湿度较大，有利于雾的形成；三是区域性污染物的扩散。</li>
+            <li>治霾非一日之功，但须始于足下。<strong style="color=red;">加快调整经济和能源结构，加大新能源的开发和利用，加大节能减排力度才是治本之策。</strong></li>
+        </ul>
+    </div>
+</body>
+</html>

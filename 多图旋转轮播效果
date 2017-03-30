@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .mainbox{
+        width: 1000px;
+        height: 440px;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    .mainbox ul li{
+        float: left;
+        list-style: none;
+        width: 220px;
+        height: 400px;
+        overflow: hidden;
+        margin-right:30px;
+    }
+    .mainbox h2{position: absolute;
+    bottom: 80px;right: 50px;background: rgba(255,255,255,0.6);
+    padding: 5px;letter-spacing: 0.6em;
+    }
+    .mainbox .butbox a{position: absolute;opacity: 0.6}
+    .mainbox .butbox a:hover{opacity: 1;}
+    .mainbox .butbox .butleft{
+    top: 220px;left: 50px;color: #fff;font-size: 60px;
+    }
+    .mainbox .butbox .butright{
+    top: 220px;right: 50px;color: #fff;font-size: 60px;
+    }
+    .play{
+        top: 0px;left: 0px;
+        border: 1px solid #000;padding: 3px;
+    }
+    </style>
+</head>
+<body>
+    <div class="mainbox">
+    <button class="play">play</button>
+    <ul>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+    </ul>
+        <div class="butbox">
+            <a class="butleft" href="#">&lt;</a>
+            <a class="butright" href="#">&gt;</a>
+
+        </div>
+        <h2>多图旋转轮播效果</h2>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.transform-0.6.2.min.js"></script>
+    <script type="text/javascript">
+var loopPlayerInit=(function(){
+    var $butleft=null;
+    var $butright=null;
+    var $play=null;
+    var $imglist=null,
+
+    function init(){
+     $butleft=$(".butleft");
+     $butright=$(".butright");
+     $play=$(".play");
+     $imglist=$(".mainbox ul li");
+     configer();
+
+    }
+    function configer(){
+        var ang=15,aint=-15;
+
+        $imglist.each(function(i){
+            var $this=$(this);
+            $this.transform({rotate:aint+(i*ang)+"deg"});
+        }
+            )
+        }
+
+
+    return init;
+})();
+
+loopPlayerInit();
+    </script>
+</body>
+</html>

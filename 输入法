@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{margin:0;padding:0;}
+    ul{list-style: none;}
+    #div1{width:70px;margin:10px auto;}
+    #ime{margin-top: 5px;
+        background: #fff;border: 1px solid #9a99ff;display: none;
+    }
+    #ime li{
+        line-height: 24px;
+        display: inline-block;
+        vertical-align: :top;
+
+    }
+    #close{
+        border-top: 1px solid #9a99ff;
+    }
+    #ime a {
+        text-decoration: none;
+        color: #00c;display: block;padding: 0 5px;
+    }
+    #ime a:hover{background: #d9e1f6;}
+    </style>
+    <script>
+    window.onload=function(){
+        var oBtn=document.getElementsByTagName('button')[0];
+        var oIme=document.getElementById('ime');
+        var oClose=document.getElementById('close');
+
+        oBtn.onclick=function(){
+            oIme.style.display=oIme.style.display=="block"?"none":"block";
+        };
+        oClose.onclick=function(){
+            oIme.style.display="none";
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="div1">
+    <button>输入法</button>
+        <ul id="ime">
+            <li><a href="#">手写</a></li>
+            <li><a href="#">拼音</a></li>
+            <li id="close"><a href="#">关闭</a></li>
+        </ul>
+    </div>
+</body>
+</html>

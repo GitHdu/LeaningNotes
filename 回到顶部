@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.btn{
+    width: 40px;
+    height: 80px;
+    position: fixed;
+    bottom: 30px;
+    background: red;
+    left: 50%;
+    margin-left: 500px;
+}
+
+.btn:hover{
+    background: green;
+}
+    </style>
+    <script>
+window.onload = function () {
+    var topbtn = document.getElementById("btn");
+    var timer = null;
+    var viewheight = document.documentElement.clientHeight;
+
+    window.onscroll = function(){
+        var backtop = document.body.scrollTop;
+        if(backtop >= viewheight){
+            topbtn.style.display = "block";
+        }else{
+            topbtn.style.display = "none";
+        }
+    }
+
+    topbtn.onclick = function () {
+
+        timer = setInterval(function () {
+            var backtop = document.body.scrollTop;
+            var speed = backtop/5;
+              speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+            document.body.scrollTop = backtop -speed;
+            if(backtop ==0){
+                clearInterval(timer);
+            }
+        }, 30);
+    }
+}
+    </script>
+</head>
+<body>
+    <div class="box">
+        <img src="j.png">
+    </div>
+    <a style="display: none" href="javascript:;" class="btn" title="回到顶端" id="btn"></a>
+</body>
+</html>

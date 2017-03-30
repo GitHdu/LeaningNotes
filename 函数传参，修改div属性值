@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+*{margin: 0;padding: 0}
+body{font-size: 12px;}
+#div1{margin: 5px auto;width: 240px;height: 120px;}
+button{margin: 5px;}
+.input{margin:5px;}
+#div2{background: black;width: 200px;height: 200px;margin: 5px auto;}
+.p{font-size: 12px;color:#ccc;padding: 10px;}
+    </style>
+<script>
+var changeStyle = function (elem, name, value) {
+    elem.style[name] = value;
+}
+
+    window.onload=function(){
+        var oDiv1=document.getElementById('div1');
+        var oDiv2=document.getElementById('div2');
+        var aBtn1=oDiv1.getElementsByTagName('button')[0];
+        var aBtn2=oDiv1.getElementsByTagName('button')[1];
+        var aInput1=oDiv1.getElementsByTagName('input')[0];
+        var aInput2=oDiv1.getElementsByTagName('input')[1];
+        aBtn1.onclick=function(){
+           changeStyle(oDiv2, aInput1.value, aInput2.value);
+        }
+        aBtn2.onclick = function ()
+        {
+        oDiv2.removeAttribute("style");
+        }
+
+    }
+</script>
+
+</head>
+<body>
+<div id="div1">
+    属性名：<input class="input" type="text" value="background"/></br>
+    属性值：<input class="input" type="text" value="blue" ></br>
+    <button>确定</button><button>重置</button></div>
+    <div id="div2"><p class="p">在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</p></div>
+</body>
+</html>

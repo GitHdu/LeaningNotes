@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <style type="text/css">
+                        #left
+                        {
+                                height:100px;
+                                margin-right:200px;
+                                background-color:green;
+                        }
+                        #right
+                        {
+                                height:100px;
+                                width:200px;
+                                float:right;
+                                background-color:red;
+                        }
+                </style>
+        </head>
+        <body>
+              <!-#right必须在#left之上-->
+                <div id="right"></div>
+                <div id="left"></div>
+        </body>
+</html>

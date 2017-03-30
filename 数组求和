@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+*{margin:0;padding: 0}
+#div1{width: 464px;font-size: 12px;color: #ccc;margin:5px auto;}
+input{padding: 2px;}
+    </style>
+<script>
+    window.onload=function(){
+        var oBtn=document.getElementById('btn1');
+        var oDiv=document.getElementById('div1');
+        var oInput = oDiv.getElementsByTagName("input")[0];
+        var aP=document.createElement('p');
+        oInput.onkeyup=function(){
+            this.value=this.value.replace(/[^(\d)|(,)]/,"");
+        }
+
+        oBtn.onclick=function(){
+            var sum=0;
+            var aInput=oInput.value.split(",");
+            for(var i in aInput){
+                sum+=parseInt(aInput[i]);
+            }
+            oDiv.appendChild(aP);
+            aP.innerHTML=sum;
+            aP.style.color='red';
+            aP.style.padding=5+'px';
+        }
+    }
+</script>
+</head>
+<body>
+    <div id="div1">
+        <input type="text" value="1,2,3,4,5,6,7,8,9,10">输入数字求和，数字之间用半角","号分隔<br/><br/>
+        <input type="button" value="add" id="btn1">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+<style type="text/css">
+    #div1 div{width: 200px;height: 100px;border: 1px solid #000;display: none;position: absolute;}
+    .active{background-color: red;}
+</style>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+/*    window.onload=function(){
+        var oDiv=document.getElementById('div1');
+        var aInput=oDiv.getElementsByTagName('input');
+        var aDiv=oDiv.getElementsByTagName('div');
+
+        for(var i=0;i<aInput.length;i++){
+            aInput[i].index=i;
+            aInput[i].onclick=function(){
+                for(var i=0;i<aInput.length;i++){
+                    aInput[i].className='';
+                    aDiv[i].style.display='none';
+            }
+            this.className='active';
+             aDiv[this.index].style.display='block';
+        }
+      }
+    }*/
+$(function(){
+
+    $('#div1').find('input').click(function(){
+        $('#div1').find('input').attr('class','');
+        $('#div1').find('div').fadeOut();
+
+        $(this).attr('class','active');
+        $('#div1').find('div').eq($(this).index()).fadeIn();
+    })
+})
+</script>
+</head>
+<body>
+    <div id="div1">
+    <input class="active" type="button" value="1"/>
+    <input type="button" value="2"/>
+    <input type="button" value="3"/>
+        <div style="display:block">1111111</div>
+        <div>2222222</div>
+        <div>3333333</div>
+    </div>
+</body>
+
+</html>

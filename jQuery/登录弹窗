@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+*{
+    margin: 0;padding: 0;
+}
+#login{ width:300px; height:300px; border:1px #000 solid; position:absolute;}
+#close{ position:absolute; right:0; top:0;}
+    </style>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+$(function(){
+    $('#input1').click(function(){
+
+        var oLogin = $('<div id="login"><p>用户名:<input type="text" /></p><p>密码:<input type="text" /></p><div id="close">X</div></div>');
+
+        $('body').append( oLogin );
+
+        oLogin.css('left' , ($(window).width() - oLogin.outerWidth())/2 );
+        oLogin.css('top' , ($(window).height() - oLogin.outerHeight())/2 );
+
+
+        $('#close').click(function(){
+
+            oLogin.remove();
+
+        });
+
+
+        $(window).on('resize scroll',function(){
+
+            oLogin.css('left' , ($(window).width() - oLogin.outerWidth())/2 );
+        oLogin.css('top' , ($(window).height() - oLogin.outerHeight())/2 + $(window).scrollTop() );
+
+        });
+
+    });
+})
+    </script>
+</head>
+<body>
+    <input id="input1" type="button" value="click"/>
+<!--     <div id="login">
+    <p>username:<input type="text" /></p>
+    <p>password:<input type="text" /></p>
+    <div id="close">X</div>
+</div> -->
+</body>
+</html>
